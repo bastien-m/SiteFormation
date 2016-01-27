@@ -1,0 +1,22 @@
+{
+  "name": "SiteFormation",
+  "version": "0.0.1",
+  "authors": [
+    "btm <bmercier@spb.eu>"
+  ],
+  "license": "SPB",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.9",
+    "angular-cookies": "~1.4.9",
+    "angular-messages": "~1.4.9",
+    "angular-route": "~1.4.9",
+    "bootstrap": "~3.3.6"
+  }
+}
