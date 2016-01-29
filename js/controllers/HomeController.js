@@ -1,12 +1,19 @@
 angular.module('Formation')
-  .controller('HomeController', ['$scope', '$location', 'FormationFactory', function($scope, $location, FormationFactory) {
+  .controller('HomeController', ['$scope', '$routeParams', '$location', 'FormationFactory', function($scope, $routeParams, $location, FormationFactory) {
 
 
-    $scope.formations = FormationFactory.get();
+    if ($routeParams != null && angular.isDefined($routeParams.keywords)) {
+      $scope.formations = FormationFactory.findByKeywords([$routeParams.keywords]);
+    }
+    else {
+      $scope.formations = FormationFactory.get();
+    }
+
+
 
 
     $scope.showDetails = function(formation) {
-      $location.path('/formation/' + formation.id);
+      $location.path('/formation/details/' + formation.id);
     }
 
     $scope.range = function(min, max, step) {

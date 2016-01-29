@@ -34,76 +34,9 @@
 
 
     <!-- Static navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">SPB | Formation</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-
-          <form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="Chercher formation" />
-                <div class="input-group-addon clickable"><i class="glyphicon glyphicon-search clickable"></i></div>
-              </div>
-            </div>
-
-          </form>
-
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Compte <i class="glyphicon glyphicon-user clickable"></i></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Formations dispensées</a></li>
-                <li><a href="#">Formations reçues</a></li>
-              </ul>
-            </li>
-          </ul>
-          <form class="navbar-form navbar-right">
-            <button type="submit" class="btn btn-primary">Proposer formation <i class="glyphicon glyphicon-pencil"></i> </button>
-          </form>
-        </div><!--/.nav-collapse -->
-      </div><!--/.container-fluid -->
-    </nav>
+    <ng-include src="'./views/navbar.html'"></ng-include>
 
     <div class="container">
-      <!-- Main component for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <h1>Liste des formations</h1>
-        <p>Trouvez ci dessous la liste complète des formations proposées par la DSI SPB</p>
-
-
-        <form class="form-inline">
-          <div class="row">
-            <div class="col-md-offset-1">
-              <div class="form-group">
-                <label>Afficher par</label>
-                <select class="form-control">
-                  <option>Tout</option>
-                  <option>Direction</option>
-                  <option>Sujet</option>
-                  <option>Animateur</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <select class="form-control" disabled>
-                  <option>DEI</option>
-                  <option>DPG</option>
-                  <option>DO</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
 
       <ng-view></ng-view>
 
@@ -123,12 +56,14 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="./bower_components/jquery/dist/jquery.min.js"></script>
     <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./bower_components/lodash/dist/lodash.min.js"></script>
     <script src="./bower_components/angular/angular.min.js"></script>
     <script src="./bower_components/angular-messages/angular-messages.min.js"></script>
     <script src="./bower_components/angular-route/angular-route.min.js"></script>
     <script src="./js/app.js"></script>
     <script src="./js/controllers/HomeController.js"></script>
     <script src="./js/controllers/FormationController.js"></script>
+    <script src="./js/controllers/NavbarController.js"></script>
     <script src="./js/services/FormationFactory.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="./js/scripts/ie10-viewport-bug-workaround.js"></script>

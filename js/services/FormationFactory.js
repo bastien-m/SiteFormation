@@ -8,7 +8,9 @@ angular.module('Formation')
         leader: 'B.MERCIER',
         level: 3,
         direction: 'DEI',
-        participants: ['BBB', 'AAA', 'ABC']
+        summary: 'Une formation d\'introduction à AngularJS nécessitant de connaitre les concepts intermédiaires de Javascript.',
+        keywords: ['javascript', 'angular', 'dev'],
+        participants: ['BBB', 'AAA', 'ABC','BBB', 'AAA', 'ABC','BBB', 'AAA', 'ABC','BBB', 'AAA', 'ABC','BBB', 'AAA', 'ABC','BBB', 'AAA', 'ABC']
       }
     ]
 
@@ -23,6 +25,14 @@ angular.module('Formation')
           }
           return null;
         }
+      },
+      findByKeywords: function(keywords) {
+        var match = [];
+        angular.forEach(formations, function(formation) {
+          match.push(_.difference(keywords, _.intersection(formation.keywords, keywords)).length === 0 ? formation : null);
+        });
+
+        return match;
       }
     }
 

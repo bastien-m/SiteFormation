@@ -5,7 +5,15 @@ angular.module('Formation', ['ngRoute', 'ngMessages' ])
       templateUrl: 'views/home.html',
       controller: 'HomeController'
     })
-    .when('/formation/:formationID', {
+    .when('/formation/create', {
+      templateUrl: 'views/formation/create.html',
+      controller: 'FormationController'
+    })
+    .when('/formation/keywords/:keywords', {
+      templateUrl: 'views/home.html',
+      controller: 'HomeController'
+    })
+    .when('/formation/details/:formationID', {
       templateUrl: 'views/formation/details.html',
       controller: 'FormationController'
     })

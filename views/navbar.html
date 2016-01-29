@@ -1,0 +1,38 @@
+<nav class="navbar navbar-default navbar-fixed-top" ng-controller="NavbarController">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#/">SPB | Formation</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Chercher formation" />
+            <div class="input-group-addon clickable"><i class="glyphicon glyphicon-search clickable"></i></div>
+          </div>
+        </div>
+
+      </form>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Compte <i class="glyphicon glyphicon-user clickable"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="#/formation/out">Formations dispensées</a></li>
+            <li><a href="#/formation/in">Formations reçues</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-right">
+        <button type="submit" class="btn btn-primary" ng-click="create()" >Proposer formation <i class="glyphicon glyphicon-pencil"></i> </button>
+      </form>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container-fluid -->
+</nav>

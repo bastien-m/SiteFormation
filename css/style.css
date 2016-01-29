@@ -1,3 +1,13 @@
 .clickable {
   cursor: pointer;
 }
+
+
+.label a {
+  color: white;
+}
+
+
+.label {
+  margin: 2px 3px;
+}

@@ -8,10 +8,14 @@ angular.module('Formation')
     })();
 
 
+    $scope.showListInPopup = function(list) {
+
+    }
 
 
-    $scope.backToList = function() {
-      $location.path('/');
+
+    $scope.back = function(url) {
+      $location.path(url);
     }
 
   }]);
