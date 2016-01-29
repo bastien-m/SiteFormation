@@ -1,0 +1,27 @@
+
+<div class="container">
+  <div class="page-header">
+    <h1>{{formation.name}} <small>Animateur: {{formation.leader}}</small></h1>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-body">
+      Difficulté de la formation: {{formation.level}}/5 <br>
+      Liste des participants
+      <ul>
+        <li ng-repeat="participant in formation.participants">
+          {{participant}}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-2">
+      <button class="btn btn-default" ng-click="backToList()">
+        <i class="glyphicon glyphicon-chevron-left"></i>Retour
+      </button>
+    </div>
+  </div>
+</div>
