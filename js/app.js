@@ -13,6 +13,14 @@ angular.module('Formation', ['ngRoute', 'ngMessages' ])
       templateUrl: 'views/home.html',
       controller: 'HomeController'
     })
+    .when('/formation/out', {
+      templateUrl: 'views/formation/list.html',
+      controller: 'FormationController'
+    })
+    .when('/formation/in', {
+      templateUrl: 'views/formation/list.html',
+      controller: 'FormationController'
+    })
     .when('/formation/details/:formationID', {
       templateUrl: 'views/formation/details.html',
       controller: 'FormationController'
@@ -23,13 +31,15 @@ angular.module('Formation', ['ngRoute', 'ngMessages' ])
     });
 
   }])
-  .constant('criteriaSearchValue', {
-    'all': {name:'Tout', secondCriteria: []},
-    'direction': {name:'Direction', secondCriteria: [{value:'DEI', name: 'DEI'},
+  .constant('criteriaSearchValue', {value: [
+    {name:'Tout', id : 'all', secondCriteria: []},
+    {name:'Direction', id: 'direction', secondCriteria: [{value:'DEI', name: 'DEI'},
                   {value: 'DO', name: 'DO'},
                   {value: 'DPG', name: 'DPG'},
                   {value: 'APM', name: 'APM'}]},
-    'leader': {name: 'Animateur', secondCriteria: [{value: 'BTM', name:'MERCIER'}, {value: 'NULL', name:'...'}]},
-    'title': {name: 'Titre', secondCriteria: [{value: 'Formation Angular', name:'Formation Angular'}]},
-    'tag': {name: 'Tag', secondCriteria: [{value: 'JS', name:'Javascript'}, {value: 'Java', name:'Java'}]}
-  });
+    {name: 'Animateur', id: 'leader', secondCriteria: [{value: 'B.MERCIER', name:'MERCIER'}, {value: 'NULL', name:'...'}]},
+    {name: 'Titre', id:'title', secondCriteria: [{value: 'Formation Angular', name:'Formation Angular'}]},
+    {name: 'Tag', id:'tag', secondCriteria: [{value: 'JS', name:'Javascript'},
+                                              {value: 'Java', name:'Java'}]
+    }
+  ]});

@@ -4,7 +4,9 @@ function($scope, $routeParams, $location, FormationFactory, criteriaSearchValue)
 
   //at init
   (function() {
-    $scope.firstCriteria = "all";
+    $scope.firstCriteria = criteriaSearchValue.value[0];
+    $scope.firstCriterias  = criteriaSearchValue.value;
+    $scope.secondCriterias = [];
 
     if ($routeParams != null && angular.isDefined($routeParams.keywords)) {
       $scope.formations = FormationFactory.findByKeywords([$routeParams.keywords]);
@@ -19,13 +21,22 @@ function($scope, $routeParams, $location, FormationFactory, criteriaSearchValue)
   });
 
 
+  $scope.searchByCriteria = function(firstCriteria, secondCriteria) {
+    if (firstCriteria.id === 'all') {
+      $scope.formations = FormationFactory.get();
+    }
+    else {
+      $scope.formations = FormationFactory.findByCriteria(firstCriteria, secondCriteria);
+    }
+  }
 
 
   $scope.firstCriteriaChanged = function() {
-    //$scope.options = [];
-    $scope.options = criteriaSearchValue[$scope.firstCriteria];
-    console.log($scope.firstCriteria);
-    console.log($scope.options);
+    console.log('firstCriteriaChanged');
+    $scope.secondCriterias = $scope.firstCriteria.secondCriteria;
+    if ($scope.secondCriterias.length > 0)
+      $scope.secondCriteria = $scope.secondCriterias[0];
+    $scope.searchByCriteria($scope.firstCriteria, $scope.secondCriteria);
   }
 
   $scope.showDetails = function(formation) {

@@ -54,6 +54,15 @@ angular.module('Formation')
         });
 
         return match;
+      },
+      findByCriteria: function(firstCriteria, secondCriteria) {
+        var match = [];
+        angular.forEach(formations, function(formation) {
+          console.log(formation[firstCriteria.id]);
+          console.log(secondCriteria.value);
+          if(formation[firstCriteria.id] === secondCriteria.value) match.push(formation);
+        });
+        return match;
       }
     }
 
