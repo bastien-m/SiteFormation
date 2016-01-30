@@ -33,6 +33,27 @@ angular.module('Formation')
         });
 
         return match;
+      },
+      findBySearchAll: function(searchExpression) {
+        var searchExpression = searchExpression.trim().toLowerCase();
+        var match = [];
+        angular.forEach(formations, function(formation) {
+          if (S(formation.name.trim().toLowerCase()).contains(searchExpression)
+          || S(formation.leader.trim().toLowerCase()).contains(searchExpression)
+          || S(formation.summary.trim().toLowerCase()).contains(searchExpression)) {
+            match.push(formation);
+          }
+          else {
+            angular.forEach(formation.keywords, function(keyword) {
+              if (S(keyword.trim().toLowerCase()).contains(searchExpression)) {
+                match.push(formation);
+                return;
+              }
+            })
+          }
+        });
+
+        return match;
       }
     }
 

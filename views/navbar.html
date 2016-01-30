@@ -14,8 +14,8 @@
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Chercher formation" />
-            <div class="input-group-addon clickable"><i class="glyphicon glyphicon-search clickable"></i></div>
+            <input type="text" class="form-control" ng-model="searchValue" placeholder="Chercher formation" ng-keydown="valueChanged(searchValue, $event)"/>
+            <div class="input-group-addon clickable" ng-click="search(searchValue)"><i class="glyphicon glyphicon-search clickable"></i></div>
           </div>
         </div>
 

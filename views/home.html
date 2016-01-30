@@ -10,18 +10,21 @@
       <div class="col-md-offset-1">
         <div class="form-group">
           <label>Afficher par</label>
-          <select class="form-control">
-            <option>Tout</option>
-            <option>Direction</option>
-            <option>Sujet</option>
-            <option>Animateur</option>
+          <select class="form-control" ng-model="firstCriteria" ng-change="firstCriteriaChanged()">
+            <option ng-repeat="option in firstCriterias" value="{{option.name}}">
+              {{option.name}}
+            </option>
+            <option value="all">Tout</option>
+            <option value="direction">Direction</option>
+            <option value="title">Sujet</option>
+            <option value="leader">Animateur</option>
           </select>
         </div>
         <div class="form-group">
-          <select class="form-control" disabled>
-            <option>DEI</option>
-            <option>DPG</option>
-            <option>DO</option>
+          <select class="form-control" ng-disabled="options.lenght === 0" ng-model="secondCriteria">
+            <option ng-repeat="option in secondCriterias" value="{{option.value}}">
+              {{option.name}}
+            </option>
           </select>
         </div>
       </div>
