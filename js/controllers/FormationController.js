@@ -13,21 +13,23 @@ angular.module('Formation')
 
 
     (function() {
+      $scope.user = UserFactory.get('BTM');
       if ($location.path() === '/formation/in') {
         $scope.formations = getFormationList('in');
-        $scope.type = 'formationIn';
       }
       else if ($location.path() == '/formation/out') {
         console.log('out');
         $scope.formations = getFormationList('out');
-        $scope.type = 'formationOut';
       }
       else {
         $scope.formation = FormationFactory.get($routeParams.formationID);
       }
     })();
 
-
+    $scope.notAlreadyRegisterToThisFormation = function() {
+      console.log(_.intersection($scope.user.formations.in, $scope.formation).length == 0);
+      return _.intersection($scope.user.formations.in, $scope.formation).length == 0;
+    }
 
     $scope.back = function(url) {
       $location.path(url);

@@ -7,7 +7,7 @@ angular.module('Formation')
         'firstname': 'bastien',
         'lastname': 'mercier',
         'formations': {
-          'in': [0],
+          'in': [1],
           'out': [0]
         }
       };

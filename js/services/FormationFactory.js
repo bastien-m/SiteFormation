@@ -5,12 +5,33 @@ angular.module('Formation')
       {
         id: 0,
         name : 'Formation Angular',
-        leader: 'B.MERCIER',
+        leader: 'BTM',
         level: 3,
         direction: 'DEI',
         summary: 'Une formation d\'introduction à AngularJS nécessitant de connaitre les concepts intermédiaires de Javascript.',
         keywords: ['javascript', 'angular', 'dev'],
         participants: ['BBB', 'AAA', 'ABC','BBB', 'AAA', 'ABC','BBB', 'AAA', 'ABC','BBB', 'AAA', 'ABC','BBB', 'AAA', 'ABC','BBB', 'AAA', 'ABC']
+      },
+      {
+        id: 1,
+        name : 'Formation Architecture SAGA2',
+        leader: 'FAB',
+        level: 2,
+        direction: 'DEI',
+        summary: 'Une formation concenant l\'architecture mise en place pour SAGA2, avec une partie APM expliquant les serveurs en place, quarantaine...',
+        keywords: ['java', 'jboss', 'archi'],
+        participants: ['BBB', 'AAA', 'ABC','BBB', 'AAA', 'ABC','BBB', 'AAA']
+      },
+
+      {
+        id: 3,
+        name : 'Direction de projet',
+        leader: 'AAA',
+        level: 1,
+        direction: 'DPG',
+        summary: 'Une formation concenant les bonnes pratiques lors de la rédaction d\'un cahier des charges',
+        keywords: ['cdc'],
+        participants: ['BBB', 'AAA', 'ABC','BBB', 'AAA']
       }
     ]
 
